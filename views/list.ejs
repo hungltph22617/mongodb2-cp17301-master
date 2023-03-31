@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .nhanvien a{
+            text-decoration: none;
+            color: black;
+            padding: 2px 2px 2px 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <table border="1" class="nhanvien">
+        <tr>
+            <th colspan="6">THÔNG TIN NHÂN VIÊN</th>
+        </tr>
+        <tr>
+            <td>Họ và tên</td>
+            <td>Địa chỉ</td>
+            <td>Lương</td>
+            <td colspan="2">Thao tác</td>
+        </tr>
+        <% danhsach.forEach(function(formNhap){ %>
+            <tr>
+                <td><%- formNhap.ten %></td>
+                <td><%- formNhap.diachi %></td>
+                <td><%- formNhap.luong %></td>
+                <div class="button">
+                    <td><a href="./delete/<%- formNhap._id %>">Delete</a></td>
+                    <td><a href="./edit/<%- formNhap._id %>">Edit</a></td>
+                </div>
+            </tr>
+            <% });%>
+    </table>
+</body>
+
+</html>
